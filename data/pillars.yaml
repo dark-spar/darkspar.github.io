@@ -3,6 +3,9 @@
     Low-level infrastructure and high-leverage tooling. We believe the
     best software is built on foundations that respect the developer's
     time.
+  products:
+    - name: "MeshDB"
+      url: "https://meshdb.io"
 
 - title: "Video Games"
   body: >-

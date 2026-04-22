@@ -32,7 +32,21 @@
           <div class="pillar-visual" aria-hidden="true">
             {{ index $visuals $i | safeHTML }}
           </div>
-          <div class="pillar-cta">
+          <div class="pillar-foot">
+            {{- with $pillar.products }}
+              <div class="pillar-products">
+                <span class="pillar-products-label">Products</span>
+                <ul>
+                  {{- range . }}
+                    <li>
+                      <a href="{{ .url }}" target="_blank" rel="noopener">
+                        {{ .name }} <span class="arrow" aria-hidden="true">↗</span>
+                      </a>
+                    </li>
+                  {{- end }}
+                </ul>
+              </div>
+            {{- end }}
             <a class="btn btn-outline btn-small" href="#contact">Inquire <span class="arrow" aria-hidden="true">↗</span></a>
           </div>
         </article>
