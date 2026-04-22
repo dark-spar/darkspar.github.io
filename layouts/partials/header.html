@@ -12,4 +12,7 @@
       <a href="{{ .URL | relURL }}">{{ .Name }}</a>
     {{- end }}
   </nav>
+  <a class="btn btn-outline btn-small btn-cta" href="mailto:{{ site.Params.email }}">
+    Inquire <span class="arrow" aria-hidden="true">↗</span>
+  </a>
 </header>

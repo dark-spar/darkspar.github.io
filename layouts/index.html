@@ -1,46 +1,62 @@
 {{ define "main" }}
   <section class="hero">
-    <p class="eyebrow">Est. {{ now.Year }}</p>
-    <h1>
-      Software, forged at the<br />
-      edge of what's possible.
-    </h1>
-    <p class="lede">
-      {{ site.Title }} builds across databases and developer tools, video
-      games, and AI — crafting the systems, worlds, and intelligence we
-      want to exist.
-    </p>
-    <div class="cta-row">
-      <a class="btn btn-primary" href="#work">See our work</a>
-      <a class="btn btn-ghost" href="#contact">Get in touch</a>
+    <div class="hero-glow" aria-hidden="true"></div>
+    <div class="hero-inner">
+      <h1 class="hero-wordmark">DarkSpar</h1>
+      <p class="hero-tagline">Software, forged at the edge of what's possible.</p>
+      <div class="cta-row">
+        <a class="btn btn-outline" href="#work">Explore <span class="arrow" aria-hidden="true">↗</span></a>
+        <a class="btn btn-outline" href="#contact">Contact <span class="arrow" aria-hidden="true">↗</span></a>
+      </div>
     </div>
   </section>
 
-  <section id="work" class="work">
-    <h2 class="section-title">What we build</h2>
-    <div class="cards">
+  <section id="work" class="pillars">
+    <header class="section-head">
+      <span class="section-label">[ Products ]</span>
+      <h2>Software across disciplines.</h2>
+    </header>
+
+    <div class="pillar-grid">
+      {{- $visuals := slice
+        `<svg viewBox="0 0 140 140" fill="none"><ellipse cx="70" cy="34" rx="44" ry="12" stroke="currentColor" stroke-width="1"/><path d="M26 34 v30 M114 34 v30" stroke="currentColor" stroke-width="1"/><ellipse cx="70" cy="64" rx="44" ry="12" stroke="currentColor" stroke-width="1"/><path d="M26 64 v30 M114 64 v30" stroke="currentColor" stroke-width="1"/><ellipse cx="70" cy="94" rx="44" ry="12" stroke="currentColor" stroke-width="1"/><path d="M26 94 v18" stroke="currentColor" stroke-width="1" opacity=".5"/><path d="M114 94 v18" stroke="currentColor" stroke-width="1" opacity=".5"/><ellipse cx="70" cy="112" rx="44" ry="12" stroke="currentColor" stroke-width="1" opacity=".35"/></svg>`
+        `<svg viewBox="0 0 140 140" fill="none"><path d="M70 14 L124 40 L124 100 L70 126 L16 100 L16 40 Z" stroke="currentColor" stroke-width="1"/><path d="M70 14 L70 126 M16 40 L124 100 M124 40 L16 100" stroke="currentColor" stroke-width="1" opacity=".45"/><path d="M70 14 L124 100 M70 14 L16 100 M16 40 L124 40 M16 100 L124 100" stroke="currentColor" stroke-width="1" opacity=".2"/></svg>`
+        `<svg viewBox="0 0 140 140" fill="none"><circle cx="70" cy="70" r="3" fill="currentColor"/><g stroke="currentColor" stroke-width="1"><circle cx="30" cy="40" r="2"/><circle cx="112" cy="32" r="2"/><circle cx="120" cy="84" r="2"/><circle cx="96" cy="118" r="2"/><circle cx="42" cy="112" r="2"/><circle cx="18" cy="78" r="2"/><circle cx="82" cy="22" r="2"/></g><g stroke="currentColor" stroke-width="1" opacity=".55"><line x1="70" y1="70" x2="30" y2="40"/><line x1="70" y1="70" x2="112" y2="32"/><line x1="70" y1="70" x2="120" y2="84"/><line x1="70" y1="70" x2="96" y2="118"/><line x1="70" y1="70" x2="42" y2="112"/><line x1="70" y1="70" x2="18" y2="78"/><line x1="70" y1="70" x2="82" y2="22"/></g><g stroke="currentColor" stroke-width="1" opacity=".25"><line x1="30" y1="40" x2="82" y2="22"/><line x1="82" y1="22" x2="112" y2="32"/><line x1="112" y1="32" x2="120" y2="84"/><line x1="120" y1="84" x2="96" y2="118"/><line x1="96" y1="118" x2="42" y2="112"/><line x1="42" y1="112" x2="18" y2="78"/><line x1="18" y1="78" x2="30" y2="40"/></g></svg>`
+      -}}
       {{- range $i, $pillar := hugo.Data.pillars }}
-        <article class="card">
-          <div class="card-index">{{ printf "%02d" (add $i 1) }}</div>
-          <h3>{{ $pillar.title }}</h3>
-          <p>{{ $pillar.body }}</p>
+        <article class="pillar">
+          <div class="pillar-head">
+            <h3 class="pillar-title">{{ $pillar.title }}</h3>
+            <p class="pillar-body">{{ $pillar.body }}</p>
+          </div>
+          <div class="pillar-visual" aria-hidden="true">
+            {{ index $visuals $i | safeHTML }}
+          </div>
+          <div class="pillar-cta">
+            <a class="btn btn-outline btn-small" href="#contact">Inquire <span class="arrow" aria-hidden="true">↗</span></a>
+          </div>
         </article>
       {{- end }}
     </div>
   </section>
 
   <section id="about" class="about">
-    <h2 class="section-title">About</h2>
+    <header class="section-head">
+      <span class="section-label">[ About ]</span>
+      <h2>Small team. Long horizon.</h2>
+    </header>
     <div class="about-body">
       {{ .Content }}
     </div>
   </section>
 
   <section id="contact" class="contact">
-    <h2 class="section-title">Get in touch</h2>
-    <p>
-      For partnership, press, or general inquiries:
-      <a href="mailto:{{ site.Params.email }}">{{ site.Params.email }}</a>
+    <header class="section-head">
+      <span class="section-label">[ Contact ]</span>
+      <h2>Get in touch.</h2>
+    </header>
+    <p class="contact-line">
+      Partnerships, press, general — <a href="mailto:{{ site.Params.email }}">{{ site.Params.email }}</a>
     </p>
   </section>
 {{ end }}

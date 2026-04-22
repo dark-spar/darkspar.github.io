@@ -1,5 +1,12 @@
 <footer class="site-footer">
-  <span>&copy; {{ now.Year }} {{ site.Title }}</span>
-  <span class="footer-dot" aria-hidden="true">·</span>
-  <span>Built with intent.</span>
+  <nav class="site-nav footer-nav" aria-label="Footer">
+    {{- range site.Menus.main }}
+      <a href="{{ .URL | relURL }}">{{ .Name }}</a>
+    {{- end }}
+  </nav>
+  <div class="footer-meta">
+    <span>&copy; {{ now.Year }} {{ site.Title }}</span>
+    <span class="footer-dot" aria-hidden="true">·</span>
+    <span>Built with intent.</span>
+  </div>
 </footer>
