@@ -1,0 +1,30 @@
+baseURL = "https://darkspar.com/"
+languageCode = "en-us"
+title = "DarkSpar"
+enableRobotsTXT = true
+
+[params]
+  description = "DarkSpar builds software across databases and developer tools, video games, and AI."
+  email = "hello@darkspar.com"
+  tagline = "Software, forged at the edge of what's possible."
+
+[[menu.main]]
+  name = "Work"
+  url = "/#work"
+  weight = 10
+
+[[menu.main]]
+  name = "About"
+  url = "/about/"
+  weight = 20
+
+[[menu.main]]
+  name = "Contact"
+  url = "/#contact"
+  weight = 30
+
+[markup.goldmark.renderer]
+  unsafe = true
+
+[taxonomies]
+

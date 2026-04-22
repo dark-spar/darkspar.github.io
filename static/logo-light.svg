@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1800 440" role="img" aria-label="DarkSpar">
+  <title>DarkSpar</title>
+
+  <defs>
+    <linearGradient id="spar-fill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#2c5a7a" stop-opacity="0.12"/>
+      <stop offset="1" stop-color="#4a7ea0" stop-opacity="0.04"/>
+    </linearGradient>
+    <linearGradient id="spar-stroke" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#1f3a52"/>
+      <stop offset="1" stop-color="#4a7ea0"/>
+    </linearGradient>
+  </defs>
+
+  <g transform="translate(40 40) scale(0.703125)">
+    <path
+      d="M256 48 L448 256 L256 464 L64 256 Z"
+      fill="url(#spar-fill)"
+      stroke="url(#spar-stroke)"
+      stroke-width="14"
+      stroke-linejoin="round"
+    />
+    <path
+      d="M256 152 L360 256 L256 360 L152 256 Z"
+      fill="none"
+      stroke="url(#spar-stroke)"
+      stroke-width="10"
+      stroke-linejoin="round"
+      opacity="0.75"
+    />
+    <line
+      x1="256" y1="48" x2="256" y2="464"
+      stroke="url(#spar-stroke)"
+      stroke-width="3.5"
+      opacity="0.6"
+    />
+    <line x1="152" y1="256" x2="64" y2="256" stroke="url(#spar-stroke)" stroke-width="3.5" opacity="0.4"/>
+    <line x1="360" y1="256" x2="448" y2="256" stroke="url(#spar-stroke)" stroke-width="3.5" opacity="0.4"/>
+  </g>
+
+  <text
+    x="460" y="292"
+    font-family="Inter, sans-serif"
+    font-weight="500"
+    font-size="260"
+    letter-spacing="-8"
+    fill="#0b0d10"
+  >DarkSpar</text>
+</svg>

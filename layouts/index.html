@@ -1,0 +1,46 @@
+{{ define "main" }}
+  <section class="hero">
+    <p class="eyebrow">Est. {{ now.Year }}</p>
+    <h1>
+      Software, forged at the<br />
+      edge of what's possible.
+    </h1>
+    <p class="lede">
+      {{ site.Title }} builds across databases and developer tools, video
+      games, and AI — crafting the systems, worlds, and intelligence we
+      want to exist.
+    </p>
+    <div class="cta-row">
+      <a class="btn btn-primary" href="#work">See our work</a>
+      <a class="btn btn-ghost" href="#contact">Get in touch</a>
+    </div>
+  </section>
+
+  <section id="work" class="work">
+    <h2 class="section-title">What we build</h2>
+    <div class="cards">
+      {{- range $i, $pillar := hugo.Data.pillars }}
+        <article class="card">
+          <div class="card-index">{{ printf "%02d" (add $i 1) }}</div>
+          <h3>{{ $pillar.title }}</h3>
+          <p>{{ $pillar.body }}</p>
+        </article>
+      {{- end }}
+    </div>
+  </section>
+
+  <section id="about" class="about">
+    <h2 class="section-title">About</h2>
+    <div class="about-body">
+      {{ .Content }}
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <h2 class="section-title">Get in touch</h2>
+    <p>
+      For partnership, press, or general inquiries:
+      <a href="mailto:{{ site.Params.email }}">{{ site.Params.email }}</a>
+    </p>
+  </section>
+{{ end }}
