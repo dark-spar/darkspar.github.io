@@ -205,6 +205,11 @@ main > section {
 
 /* ---------- Hero ---------- */
 
+main > section.hero {
+  max-width: none;
+  padding-inline: 0;
+}
+
 .hero {
   position: relative;
   display: flex;
